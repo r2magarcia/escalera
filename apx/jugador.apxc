@@ -1,0 +1,7 @@
+public class jugador {
+    public integer position {get;set;}
+    
+    public jugador(){
+        this.position=0;
+    }
+}

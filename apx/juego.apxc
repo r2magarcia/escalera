@@ -1,0 +1,25 @@
+public class juego {
+	public tablero tablero;
+    public jugador jugador;
+    
+    public juego(){
+        tablero=new tablero();
+        jugador=new jugador();
+    }
+    
+    public void jugar(){
+        while (jugador.position<tablero.casillas){
+            System.debug(this);
+            jugador.position+=tablero.dado();
+            System.debug('Jugador avanza a casilla '+jugador.position);
+            if(tablero.escaleras.containsKey(jugador.position)){
+                jugador.position = tablero.escaleras.get(jugador.position);
+                System.debug('Jugador cae en una escalera y avanza a casilla '+jugador.position);
+            }
+            if(tablero.serpientes.containsKey(jugador.position)){
+                jugador.position = tablero.serpientes.get(jugador.position);
+                System.debug('Jugador cae en una serpiente y cae a la casilla '+jugador.position);
+            }
+        }
+    }
+}

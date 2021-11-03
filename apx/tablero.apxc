@@ -1,0 +1,26 @@
+public class tablero {
+    
+   public integer casillas { get; set; }
+   public Map<Integer, Integer> escaleras {get;set;}
+   public Map<Integer, Integer> serpientes {get;set;}
+   
+    public integer dado(){
+        return Integer.valueof((Math.random() * 6));
+    }
+    
+    public tablero() {
+      this.casillas=25;
+        this.escaleras = new Map<Integer, Integer>();
+      this.escaleras.put(10, 12);
+      this.escaleras.put(3, 11);
+      this.escaleras.put(9, 18);
+      this.escaleras.put(6, 17);
+        
+        this.serpientes = new Map<Integer, Integer>();
+      	this.serpientes.put(14,4);
+    	this.serpientes.put(19,8);
+    	this.serpientes.put(22,20);
+    	this.serpientes.put(24,16);
+  }
+
+}
